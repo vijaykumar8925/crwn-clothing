@@ -11,6 +11,8 @@ import ShopPage from './pages/shop/shop.component';
 
 import Header from './components/header/header.component';
 
+import SignINAndSignUpPage from './pages/sign-in-and-sign-out/sign-in-and-sign-out.component';
+
 
 
 
@@ -21,6 +23,8 @@ function App() {
       <Routes>
      <Route exact path='/' element={<HomePage/>}/>
       <Route path='/shop' element={<ShopPage/>}/>
+      <Route path='/signin' element={<SignINAndSignUpPage/>}/>
+
         </Routes>    
     </div>
   );
