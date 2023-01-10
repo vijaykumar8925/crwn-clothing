@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  Route, Routes } from 'react-router-dom';
+import {  Route, Routes , Navigate } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
@@ -58,7 +58,14 @@ unsubscribeFromAuth = null;
         <Routes>
        <Route exact path='/' element={<HomePage/>}/>
         <Route path='/shop' element={<ShopPage/>}/>
-        <Route path='/signin' element={<SignINAndSignUpPage/>}/>
+        {/* <Route 
+        exact 
+        path='/signin' 
+         render={ () => this.props.currentUser ? 
+           <Navigate to='/' /> : 
+           <SignINAndSignUpPage/> }/> */}
+           <Route path='/signin' element={this.props.currentUser ? 
+           <Navigate to='/'/> : <SignINAndSignUpPage/>} />
   
           </Routes>    
       </div>
@@ -66,8 +73,12 @@ unsubscribeFromAuth = null;
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser : user.currentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser : user => dispatch(setCurrentUser(user))
 })
 
-export default connect(null ,mapDispatchToProps )(App);
+export default connect(mapStateToProps,mapDispatchToProps )(App);
