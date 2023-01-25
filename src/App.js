@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {  Route, Routes , Navigate } from 'react-router-dom';
+import {  Route, Switch , Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
@@ -61,10 +61,10 @@ unsubscribeFromAuth = null;
     return (
       <div> 
         <Header /> 
-        <Routes>
-       <Route exact path='/' element={<HomePage/>}/>
-        <Route path='/shop' element={<ShopPage/>}/>
-        <Route exact path='/checkout' element={<CheckoutPage/>}/>
+        <Switch>
+       <Route exact path='/' component={HomePage}/>
+        <Route path='/shop' component={ShopPage}/>
+        <Route exact path='/checkout' component={CheckoutPage}/>
 
         {/* <Route 
         exact 
@@ -72,10 +72,10 @@ unsubscribeFromAuth = null;
          render={ () => this.props.currentUser ? 
            <Navigate to='/' /> : 
            <SignINAndSignUpPage/> }/> */}
-           <Route path='/signin' element={this.props.currentUser ? 
-           <Navigate to='/'/> : <SignINAndSignUpPage/>} />
+           <Route path='/signin' component={this.props.currentUser ? 
+           <Redirect to='/'/> : <SignINAndSignUpPage/>} />
   
-          </Routes>    
+          </Switch>    
       </div>
     );
   }
