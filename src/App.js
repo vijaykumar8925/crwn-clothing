@@ -26,8 +26,6 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selector';
 
 
-
-
 class App extends React.Component  {
 unsubscribeFromAuth = null;
 
@@ -72,8 +70,8 @@ unsubscribeFromAuth = null;
          render={ () => this.props.currentUser ? 
            <Navigate to='/' /> : 
            <SignINAndSignUpPage/> }/> */}
-           <Route path='/signin' component={this.props.currentUser ? 
-           <Redirect to='/'/> : <SignINAndSignUpPage/>} />
+           <Route exact path='/signin' render= { () => this.props.currentUser ? 
+           (<Redirect to='/'/>) : (<SignINAndSignUpPage/>)} />
   
           </Switch>    
       </div>
