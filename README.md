@@ -48,6 +48,21 @@ A new React project
 
 ![Screenshot (7)](https://user-images.githubusercontent.com/116190714/216249194-1c30bc86-981b-46c2-827a-469f46645c87.png)
 
+**Data Storage**
+
+Storing collections data and user data in firebase firestore.
+
+![Data Storae](https://user-images.githubusercontent.com/116190714/216252323-6cee7110-24be-4512-a55a-54ccbb0ed011.JPG)
+
+![datastorage2](https://user-images.githubusercontent.com/116190714/216252377-0fc5ff62-ef64-4ce2-b4b3-df6df3dc48c7.JPG)
+
+**Redux**
+
+Getting stored backend data from firebase firestore with help of redux.
+
+![redux](https://user-images.githubusercontent.com/116190714/216253382-08b7d192-dde6-4e34-bc14-e64c75b43b9d.JPG)
+
+
 
 
 
